@@ -88,7 +88,7 @@ void loop(){
   int sensorValue = analogRead(A0);  // read data from sensor
   AirQuality = (int)((float)sensorValue/1024*500);
   
-  if(AirQuality < 35)
+  if(AirQuality > 35)
     turnOnLed = true;
     
   // DHCP expiration is a bit brutal, because all other ethernet activity and
