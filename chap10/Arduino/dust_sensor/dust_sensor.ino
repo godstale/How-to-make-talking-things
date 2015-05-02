@@ -146,7 +146,7 @@ void sendData() {
     url_buf[i] = 0x00;
   
   // make request parameters
-  String strUrl = "update?key=WRXUSJ4S7G0LXWGS&field1=";
+  String strUrl = "update?key=thingspeak_api_key&field1=";
   strUrl += dtostrf(DustDensity, 5, 4, s);
   strUrl.toCharArray(url_buf, MAX_URL_LENGTH - 1);
   url_buf[MAX_URL_LENGTH - 1] = 0x00;
@@ -173,7 +173,7 @@ void sendDataUsingPost() {
                       "Content-Length: $D" "\r\n" 
                       "\r\n" 
                       "$H"),
-          website, PSTR("WRXUSJ4S7G0LXWGS"), stash.size(), sd);
+          website, PSTR("thingspeak_api_key"), stash.size(), sd);
 
   // send the packet - this also releases all stash buffers once done
   ether.tcpSend();
